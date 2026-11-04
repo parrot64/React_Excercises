@@ -1,10 +1,24 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+import { createRoot } from 'react-dom/client'
+import { useState } from 'react';
+
+
+function Test() {
+  var [counter,setI] = useState(0)
+  function clicked() {
+    setI(counter + 1);
+  }
+
+  return (
+    <>
+      <p>Hello World{counter}</p>
+      <button onClick={clicked}>Press</button>
+    </>
+  )
+}
+
+createRoot(document.getElementById('root')).render (
+  <div>
+    <Test/>
+  </div>
+);
